@@ -1,0 +1,10 @@
+{
+  "name": "Stellarbot",
+  "version": "0.1.0",
+  "dependencies": {
+    "feedparser": "0.16.5",
+    "jsonfile": "1.1.1",
+    "request": "2.33.0",
+    "twit": "1.1.2"
+  }
+}
