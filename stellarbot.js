@@ -34,13 +34,13 @@ setInterval(function() {
             }
           }
         }
-        })
-        .on('end', function() {
-          jf.writeFile(cachedFeed, stellarItems, function(writeErr) {
-            if (writeErr) {
-              console.log(writeErr);
-            }
-          });
+      })
+      .on('end', function() {
+        jf.writeFile(cachedFeed, stellarItems, function(writeErr) {
+          if (writeErr) {
+            console.log(writeErr);
+          }
         });
       });
+  });
 }, 1800000 + Math.floor(Math.random() * 1800000));
