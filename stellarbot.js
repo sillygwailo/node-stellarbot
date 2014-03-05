@@ -9,10 +9,9 @@ var C = require(__dirname + '/config.js');
 var stellarFeed = 'http://stellar.io/' + C.stellarUsername + '/flow/feed';
 var cachedFeed = __dirname+'/feed.json';
 
-var stellarItems = [];
-var cachedItems = [];
-
-setInterval(function() {
+function Stellar() {
+  var stellarItems = [];
+  var cachedItems = [];
   jf.readFile(cachedFeed, function(readErr, cachedItems) {
     request(stellarFeed)
       .pipe(new FeedParser())
@@ -43,4 +42,15 @@ setInterval(function() {
         });
       });
   });
+}
+
+setInterval(function() {
+  try {
+    Stellar()
+  }
+  catch (e) {
+    console.log(e);
+  }
 }, 1800000 + Math.floor(Math.random() * 1800000));
+
+Stellar();
