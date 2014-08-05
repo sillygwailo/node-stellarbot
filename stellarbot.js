@@ -26,7 +26,6 @@ function Stellar() {
             tweet_id = url.parse(stellarItem.link).pathname.split('/')[3];
             tweet_username = url.parse(stellarItem.link).pathname.split('/')[1];
             if (C.excludeIDs.indexOf(tweet_username) === -1) {
-              var no_of_heads = 0
               var flip_result = Math.floor(Math.random() * (100 - 1)) + 1;
               if (flip_result <= 80) {
                 T.post('statuses/retweet/' + tweet_id, function(RTerr, reply) {
