@@ -1,4 +1,5 @@
 module.exports = {
   stellarUsername: "YOURSTELLARUSERNAME",
-  excludeIDs: []
+  excludeIDs: [],
+  excludedWords: []
 }
